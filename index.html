@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Private Bot Demo</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 100px; }
+    #bot-container { display: none; }
+  </style>
+</head>
+<body>
+  <h2>Welcome to the SD AI Solutions Demo</h2>
+  <p>Please enter the password to access the bot:</p>
+
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <button onclick="checkPassword()">Submit</button>
+
+  <div id="bot-container">
+    <h3>Resident Support Bot</h3>
+    <!-- Your chatbot embed -->
+    <script src="https://app.sdaisolutions.com/js/chat_plugin.js" data-bot-id="52121"></script>
+  </div>
+
+  <script>
+    const PASSWORD = "test123"; // Change this!
+
+    function checkPassword() {
+      const userInput = document.getElementById('passwordInput').value;
+      if (userInput === PASSWORD) {
+        document.getElementById('bot-container').style.display = 'block';
+      } else {
+        alert("Incorrect password. Try again.");
+      }
+    }
+  </script>
+</body>
+</html>
