@@ -1,36 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Private Bot Demo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SD AI Solutions - Bot Demo</title>
   <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 100px; }
-    #bot-container { display: none; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    header {
+      margin-top: 60px;
+      margin-bottom: 30px;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #2b2d42;
+      margin-bottom: 10px;
+    }
+
+    p.lead {
+      font-size: 1rem;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #bot-container {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      background: #ffffff;
+      padding: 20px;
+    }
+
+    #cta {
+      margin-top: 50px;
+      padding: 20px;
+    }
+
+    #cta h3 {
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    #cta p {
+      font-size: 0.95rem;
+      color: #444;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .cta-button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #2b2d42;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .cta-button:hover {
+      background-color: #1a1c2d;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.85rem;
+      color: #888;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      #bot-container {
+        padding: 10px;
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
   </style>
 </head>
 <body>
-  <h2>Welcome to the SD AI Solutions Demo</h2>
-  <p>Please enter the password to access the bot:</p>
 
-  <input type="password" id="passwordInput" placeholder="Enter password">
-  <button onclick="checkPassword()">Submit</button>
+  <header>
+    <h1>🤖 You’re About to Meet an AI That’s Redefining Resident Support</h1>
+    <p class="lead">This isn’t just a chatbot. It’s a silent assistant that never sleeps, always responds, and makes your team look like superheroes.</p>
+  </header>
 
   <div id="bot-container">
-    <h3>Resident Support Bot</h3>
-    <!-- Your chatbot embed -->
+    <h2>Resident Support Chatbot</h2>
+    <!-- Embedded Bot -->
     <script src="https://app.sdaisolutions.com/js/chat_plugin.js" data-bot-id="52121"></script>
   </div>
 
-  <script>
-    const PASSWORD = "test123"; // Change this!
+  <!-- CTA Section -->
+  <div id="cta">
+    <h3>⚡ Limited Beta Enrollment</h3>
+    <p>Only a handful of early partners will help shape this next-gen experience.<br>Spots are filling fast. Will one have your name on it?</p>
+    <button class="cta-button" onclick="alert('Coming soon!')">Reserve Early Access</button>
+  </div>
 
-    function checkPassword() {
-      const userInput = document.getElementById('passwordInput').value;
-      if (userInput === PASSWORD) {
-        document.getElementById('bot-container').style.display = 'block';
-      } else {
-        alert("Incorrect password. Try again.");
-      }
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 SD AI Solutions. All rights reserved.</p>
+    <p><em>Crafted with care by SD AI Solutions — where intelligence meets intuition.</em></p>
+  </footer>
+
 </body>
 </html>
